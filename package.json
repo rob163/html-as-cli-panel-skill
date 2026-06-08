@@ -1,0 +1,11 @@
+{
+  "name": "html-as-cli-panel-skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portable agent skill for creating static HTML CLI command panels.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-skill.mjs"
+  }
+}
