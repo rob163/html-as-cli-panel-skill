@@ -14,12 +14,12 @@ dependencies to the target project.
 
 <p align="center">
   <a href="https://rob163.github.io/html-as-cli-panel-skill/demo/cli-panel.html">
-    <img src="./docs/images/cli-panel-preview.png" alt="CLI Panel template preview" width="100%">
+    <img src="./docs/images/cli-panel-preview.png" alt="HTML as CLI Panel Skill command panel preview" width="100%">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://rob163.github.io/html-as-cli-panel-skill/demo/cli-panel.html"><strong>Open the live template demo</strong></a>
+  <a href="https://rob163.github.io/html-as-cli-panel-skill/demo/cli-panel.html"><strong>Open the live project command panel</strong></a>
 </p>
 
 ## Install
