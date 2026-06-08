@@ -73,8 +73,24 @@ checked-in `.agents/plugins/marketplace.json` and
 `plugins/html-as-cli-panel-skill/.codex-plugin/plugin.json`
 files, which expose the same `cli-panel` skill through Codex's plugin system.
 
+Add the marketplace:
+
 ```bash
 codex plugin marketplace add rob163/html-as-cli-panel-skill
+```
+
+Then install it from Codex:
+
+- Codex Desktop: open **Plugins**, select the `html-as-cli-panel-skill`
+  marketplace, open the plugin, then click **Add to Codex**.
+- Codex CLI: run `codex`, open `/plugins`, select the
+  `html-as-cli-panel-skill` marketplace, open the plugin, then choose
+  `Install plugin`.
+
+Some newer Codex CLI builds also support this shortcut after the marketplace is
+added:
+
+```bash
 codex plugin add html-as-cli-panel-skill@html-as-cli-panel-skill
 ```
 
@@ -83,11 +99,10 @@ For a local clone:
 ```bash
 git clone https://github.com/rob163/html-as-cli-panel-skill
 codex plugin marketplace add ./html-as-cli-panel-skill
-codex plugin add html-as-cli-panel-skill@html-as-cli-panel-skill
 ```
 
-Restart Codex or start a new thread if the installed skill does not appear
-immediately.
+Then install from the same Codex Desktop or `/plugins` flow above. Restart
+Codex or start a new thread if the installed skill does not appear immediately.
 
 ### Claude Code plugin
 
