@@ -66,10 +66,10 @@ Codex does not need `agents/openai.yaml` to create `cli-panel.html`. When the
 skill triggers, Codex reads the workflow in `SKILL.md` and uses the bundled
 `assets/cli-panel.html` template from the installed skill folder.
 
-`description` stays self-contained because Codex uses it for implicit skill
-matching. `when_to_use` is optional ecosystem metadata used by agents and
-registries that support it, including Claude Code-style skill listings. The
-skill does not depend on `when_to_use` being read.
+`description` stays self-contained because Codex and Claude Code both use it for
+implicit skill matching. `when_to_use` is optional ecosystem metadata for
+registries and tools that support it. The skill does not depend on `when_to_use`
+being read.
 
 ## Package Layout
 
