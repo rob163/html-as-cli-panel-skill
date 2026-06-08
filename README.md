@@ -32,39 +32,96 @@ do not need to install it separately — `npx skills` runs it on demand.
 Use the installer so the target agent receives the correct layout. This avoids
 fragile file-placement mistakes.
 
-Install into the current project (shared with the repo via git):
+### skills CLI
+
+Install into the current project:
 
 ```bash
-npx skills add rob163/html-as-cli-panel-skill --agent cursor
+npx skills add rob163/html-as-cli-panel-skill
 ```
 
-Install globally for one agent (available in every project on your machine):
+Install for a specific agent:
 
 ```bash
-npx skills add rob163/html-as-cli-panel-skill --global --agent cursor
-```
-
-Replace `cursor` with your agent: `codex`, `claude-code`, and others are
-supported. Omit `--agent` only if you want the CLI to auto-detect installed
-agents or prompt you to choose.
-
-Other examples:
-
-```bash
-# Codex, project-local
 npx skills add rob163/html-as-cli-panel-skill --agent codex
+npx skills add rob163/html-as-cli-panel-skill --agent claude-code
+```
 
-# Claude Code, global
+Install globally instead of project-local:
+
+```bash
+npx skills add rob163/html-as-cli-panel-skill --global --agent codex
 npx skills add rob163/html-as-cli-panel-skill --global --agent claude-code
+```
 
-# Skip confirmation prompts (useful in scripts)
-npx skills add rob163/html-as-cli-panel-skill --global --agent cursor --yes
+Skip confirmation prompts when installing in scripts:
+
+```bash
+npx skills add rob163/html-as-cli-panel-skill --global --agent codex --yes
 ```
 
 Verify installation:
 
 ```bash
-npx skills ls -g -a cursor
+npx skills ls -g -a codex
+```
+
+### Codex plugin
+
+Codex can install this repository as a plugin marketplace. This path uses the
+checked-in `.agents/plugins/marketplace.json` and `codex/.codex-plugin/plugin.json`
+files, which expose the same `cli-panel` skill through Codex's plugin system.
+
+```bash
+codex plugin marketplace add rob163/html-as-cli-panel-skill
+codex plugin add html-as-cli-panel-skill@html-as-cli-panel-skill
+```
+
+For a local clone:
+
+```bash
+git clone https://github.com/rob163/html-as-cli-panel-skill
+codex plugin marketplace add ./html-as-cli-panel-skill
+codex plugin add html-as-cli-panel-skill@html-as-cli-panel-skill
+```
+
+Restart Codex or start a new thread if the installed skill does not appear
+immediately.
+
+### Claude Code plugin
+
+Install as a versioned Claude Code plugin from inside Claude Code:
+
+```text
+/plugin marketplace add rob163/html-as-cli-panel-skill
+/plugin install html-as-cli-panel-skill@html-as-cli-panel-skill
+```
+
+The plugin uses the `skills/cli-panel` package in this repository, so the
+Claude Code plugin and direct skill installs stay aligned.
+
+### git clone
+
+Clone directly into the agent's skills directory when you prefer a simple
+manual install.
+
+Codex:
+
+```bash
+git clone https://github.com/rob163/html-as-cli-panel-skill "${CODEX_HOME:-$HOME/.codex}/skills/cli-panel"
+```
+
+Claude Code:
+
+```bash
+git clone https://github.com/rob163/html-as-cli-panel-skill ~/.claude/skills/cli-panel
+```
+
+Restart the agent after cloning. To update later:
+
+```bash
+git -C "${CODEX_HOME:-$HOME/.codex}/skills/cli-panel" pull
+git -C ~/.claude/skills/cli-panel pull
 ```
 
 ## Development

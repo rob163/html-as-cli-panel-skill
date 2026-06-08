@@ -1,0 +1,18 @@
+{
+  "name": "html-as-cli-panel-skill",
+  "version": "0.1.0",
+  "description": "Agent skill for creating static, copy-only HTML command panels from repeat-use CLI workflows.",
+  "author": {
+    "name": "rob163",
+    "url": "https://github.com/rob163"
+  },
+  "homepage": "https://github.com/rob163/html-as-cli-panel-skill",
+  "repository": "https://github.com/rob163/html-as-cli-panel-skill",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "HTML as CLI Panel Skill",
+    "shortDescription": "Create static HTML command panels for project CLI workflows.",
+    "category": "Productivity"
+  }
+}
