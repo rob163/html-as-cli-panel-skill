@@ -69,7 +69,8 @@ npx skills ls -g -a codex
 ### Codex plugin
 
 Codex can install this repository as a plugin marketplace. This path uses the
-checked-in `.agents/plugins/marketplace.json` and `codex/.codex-plugin/plugin.json`
+checked-in `.agents/plugins/marketplace.json` and
+`plugins/html-as-cli-panel-skill/.codex-plugin/plugin.json`
 files, which expose the same `cli-panel` skill through Codex's plugin system.
 
 ```bash
@@ -97,8 +98,10 @@ Install as a versioned Claude Code plugin from inside Claude Code:
 /plugin install html-as-cli-panel-skill@html-as-cli-panel-skill
 ```
 
-The plugin uses the `skills/cli-panel` package in this repository, so the
-Claude Code plugin and direct skill installs stay aligned.
+The plugin uses the same packaged skill as Codex. The root `SKILL.md`,
+`assets/cli-panel.html`, and `skills/cli-panel` paths are symlinks into that
+package, so plugin and direct skill installs stay aligned without duplicating
+the template.
 
 ### git clone
 

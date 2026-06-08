@@ -9,10 +9,7 @@
   "plugins": [
     {
       "name": "html-as-cli-panel-skill",
-      "source": {
-        "source": "github",
-        "repo": "rob163/html-as-cli-panel-skill"
-      },
+      "source": "./plugins/html-as-cli-panel-skill",
       "description": "Create localStorage-backed HTML command panels for project CLI workflows."
     }
   ]

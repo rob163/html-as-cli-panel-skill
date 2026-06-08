@@ -8,7 +8,7 @@
       "name": "html-as-cli-panel-skill",
       "source": {
         "source": "local",
-        "path": "./codex"
+        "path": "./plugins/html-as-cli-panel-skill"
       },
       "policy": {
         "installation": "AVAILABLE",
