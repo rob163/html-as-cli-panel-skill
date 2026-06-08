@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML as CLI Panel</title>
+  <title>HTML as CLI Panel Skill Commands</title>
   <style>
     :root {
       color-scheme: light;
@@ -532,8 +532,8 @@
     <header class="hero">
       <div>
         <p class="eyebrow">HTML as CLI Panel</p>
-        <h1>CLI Panel</h1>
-        <p class="subtitle">A static browser panel for project commands. It stores commands in this browser's localStorage, builds copyable CLI strings.</p>
+        <h1>HTML as CLI Panel Skill</h1>
+        <p class="subtitle">A project-specific command panel for installing, validating, previewing, and publishing the HTML as CLI Panel skill across Codex, Claude Code, and the open skills ecosystem.</p>
       </div>
     </header>
 
@@ -569,22 +569,84 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    const storageKey = "REPLACE_WITH_PROJECT_SLUG.cli-panel.v1";
-    const defaultsKey = "REPLACE_WITH_PROJECT_SLUG.cli-panel.default.v1";
+    const storageKey = "html-as-cli-panel-skill.cli-panel.v1";
+    const defaultsKey = "html-as-cli-panel-skill.cli-panel.default.v1";
     const FAVORITES_TAB = "__favorites__";
     const FAVORITES_LABEL = "Favorites";
     const defaultState = {
-      activeType: "group",
+      activeType: "Package",
       commands: [
         {
           id: crypto.randomUUID(),
-          type: "group",
-          label: "Template command",
-          description: "Replace this text with what the command does and when to use it.",
-          fixedText: "replace-with-command-prefix",
+          type: "Package",
+          label: "Validate package",
+          description: "Run the repository validation script before pushing README, plugin, or skill packaging changes.",
+          fixedText: "npm run validate",
+          segments: []
+        },
+        {
+          id: crypto.randomUUID(),
+          type: "Install",
+          label: "Install with skills CLI",
+          description: "Install this skill through the open skills CLI for a selected agent and scope.",
+          fixedText: "npx skills add",
           segments: [
-            { id: crypto.randomUUID(), name: "--option", value: "value", widget: "text" },
-            { id: crypto.randomUUID(), name: "--flag-without-value", value: "", widget: "text" }
+            { id: crypto.randomUUID(), name: "", value: "rob163/html-as-cli-panel-skill", widget: "text" },
+            { id: crypto.randomUUID(), name: "--agent", value: "codex", widget: "text" },
+            { id: crypto.randomUUID(), name: "--global", value: "", widget: "text" },
+            { id: crypto.randomUUID(), name: "--yes", value: "", widget: "text" }
+          ]
+        },
+        {
+          id: crypto.randomUUID(),
+          type: "Install",
+          label: "Update installed skill",
+          description: "Refresh an already installed global skill when the GitHub repository has changed.",
+          fixedText: "npx skills update",
+          segments: [
+            { id: crypto.randomUUID(), name: "", value: "cli-panel", widget: "text" },
+            { id: crypto.randomUUID(), name: "--global", value: "", widget: "text" }
+          ]
+        },
+        {
+          id: crypto.randomUUID(),
+          type: "Codex Plugin",
+          label: "Add Codex marketplace",
+          description: "Register this repository as a Codex plugin marketplace before installing from Codex Desktop or the CLI plugin browser.",
+          fixedText: "codex plugin marketplace add",
+          segments: [
+            { id: crypto.randomUUID(), name: "", value: "rob163/html-as-cli-panel-skill", widget: "text" }
+          ]
+        },
+        {
+          id: crypto.randomUUID(),
+          type: "Codex Plugin",
+          label: "Install plugin shortcut",
+          description: "Install from the registered marketplace on Codex CLI builds that support the plugin add shortcut.",
+          fixedText: "codex plugin add",
+          segments: [
+            { id: crypto.randomUUID(), name: "", value: "html-as-cli-panel-skill@html-as-cli-panel-skill", widget: "text" }
+          ]
+        },
+        {
+          id: crypto.randomUUID(),
+          type: "GitHub",
+          label: "Set repository topics",
+          description: "Apply the GitHub About tags that describe the project and supported agent surfaces.",
+          fixedText: "gh repo edit rob163/html-as-cli-panel-skill",
+          segments: [
+            { id: crypto.randomUUID(), name: "--add-topic", value: "offline-html,codex,claude-code,cli-panel,command-ui,agent-skill,html-effectiveness", widget: "text" }
+          ]
+        },
+        {
+          id: crypto.randomUUID(),
+          type: "Preview",
+          label: "Serve documentation demo",
+          description: "Serve the GitHub Pages documentation folder locally to inspect the command panel before publishing.",
+          fixedText: "python3 -m http.server",
+          segments: [
+            { id: crypto.randomUUID(), name: "", value: "8000", widget: "number" },
+            { id: crypto.randomUUID(), name: "--directory", value: "docs", widget: "text" }
           ]
         }
       ]
