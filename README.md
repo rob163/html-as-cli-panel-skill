@@ -56,39 +56,6 @@ installer path:
 npx skills add . --agent codex
 ```
 
-## How It Works
-
-The installer finds `SKILL.md`, then links or copies the whole skill package into
-the target agent's skill directory. For Codex and Claude Code, the portable
-contract is the same: a skill folder with `SKILL.md` plus bundled resources.
-
-Codex does not need `agents/openai.yaml` to create `cli-panel.html`. When the
-skill triggers, Codex reads the workflow in `SKILL.md` and uses the bundled
-`assets/cli-panel.html` template from the installed skill folder.
-
-`description` stays self-contained because Codex and Claude Code both use it for
-implicit skill matching. `when_to_use` is optional ecosystem metadata for
-registries and tools that support it. The skill does not depend on `when_to_use`
-being read.
-
-## Package Layout
-
-```text
-.
-├── SKILL.md
-├── assets/cli-panel.html
-└── docs/
-```
-
-`SKILL.md` is the portable skill entrypoint used by agents and registries such as
-[skills.sh](https://www.skills.sh/). `assets/cli-panel.html` is the template the
-agent copies into target projects.
-
-This repository intentionally does not include agent-specific UI metadata such as
-`agents/openai.yaml`. The skill package should stay portable. If a future Codex
-plugin or marketplace wrapper is needed, add it as an adapter around the same
-`SKILL.md` and `assets/` directory rather than making the core skill Codex-only.
-
 ## Development
 
 Validate the skill package:
