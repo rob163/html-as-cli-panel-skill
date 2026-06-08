@@ -1,0 +1,19 @@
+{
+  "name": "html-as-cli-panel-skill",
+  "owner": {
+    "name": "rob163"
+  },
+  "metadata": {
+    "description": "Agent skill for creating static, copy-only HTML command panels from repeat-use CLI workflows."
+  },
+  "plugins": [
+    {
+      "name": "html-as-cli-panel-skill",
+      "source": {
+        "source": "github",
+        "repo": "rob163/html-as-cli-panel-skill"
+      },
+      "description": "Create localStorage-backed HTML command panels for project CLI workflows."
+    }
+  ]
+}
