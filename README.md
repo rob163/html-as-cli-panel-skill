@@ -19,31 +19,47 @@ dependencies to the target project.
 
 ## Install
 
-Use the `skills` installer so the target agent receives the correct directory
-layout. This avoids fragile file-placement mistakes.
+[skills](https://skills.sh) is the CLI for the open agent skills ecosystem. It
+downloads a skill from a GitHub repository and places it in the directory your
+coding agent expects (for example `~/.cursor/skills/` or `.codex/skills/`). You
+do not need to install it separately — `npx skills` runs it on demand.
 
-Install with automatic agent detection:
+Use the installer so the target agent receives the correct layout. This avoids
+fragile file-placement mistakes.
+
+Install into the current project (shared with the repo via git):
 
 ```bash
-npx skills add rob163/html-as-cli-panel-skill
+npx skills add rob163/html-as-cli-panel-skill --agent cursor
 ```
 
-Install for Codex:
+Install globally for one agent (available in every project on your machine):
 
 ```bash
+npx skills add rob163/html-as-cli-panel-skill --global --agent cursor
+```
+
+Replace `cursor` with your agent: `codex`, `claude-code`, and others are
+supported. Omit `--agent` only if you want the CLI to auto-detect installed
+agents or prompt you to choose.
+
+Other examples:
+
+```bash
+# Codex, project-local
 npx skills add rob163/html-as-cli-panel-skill --agent codex
+
+# Claude Code, global
+npx skills add rob163/html-as-cli-panel-skill --global --agent claude-code
+
+# Skip confirmation prompts (useful in scripts)
+npx skills add rob163/html-as-cli-panel-skill --global --agent cursor --yes
 ```
 
-Install for Claude Code:
+Verify installation:
 
 ```bash
-npx skills add rob163/html-as-cli-panel-skill --agent claude-code
-```
-
-Install globally instead of project-local:
-
-```bash
-npx skills add rob163/html-as-cli-panel-skill --global
+npx skills ls -g -a cursor
 ```
 
 Private repository installs require GitHub authentication in the environment
