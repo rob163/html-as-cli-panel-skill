@@ -1,11 +1,11 @@
-# HTML as CLI Panel Skill
+# HTML as CLI Panel
 
 An agent skill for creating a static, copy-only HTML command panel from a
 project's repeat-use CLI workflows.
 
 <p align="center">
   <a href="https://skills.sh/rob163/html-as-cli-panel-skill"><img alt="skills.sh" src="https://skills.sh/b/rob163/html-as-cli-panel-skill"></a>
-  <a href="https://github.com/rob163/html-as-cli-panel-skill/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/rob163/html-as-cli-panel-skill?style=flat-square"></a>
+  <a href="https://github.com/rob163/html-as-cli-panel-skill/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue?style=flat-square"></a>
 </p>
 
 The generated `cli-panel.html` runs locally in the browser, stores edits in
